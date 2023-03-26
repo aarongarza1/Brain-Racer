@@ -17,6 +17,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private GameObject TargetGameObject;
         [SerializeField] private Transform m_Target;
         private Vector3 prev_Target;
+        public Vector3 m_force;// = Vector3.zero;
         private void Awake()
         {
             // get the car controller reference
@@ -40,6 +41,7 @@ namespace UnityStandardAssets.Vehicles.Car
         // Start is called before the first frame update
         void Update()
         {
+            m_Target = TargetGameObject.GetComponent<Transform>();
             // Check for a new target position
             /*if ((m_target.position != prev_target))
             {
@@ -51,6 +53,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         void FixedUpdate()
         {
+
             // Calculate steering forces
             Vector3 targetForce = CalculateTargetForce();
             Vector3 obstacleForce = CalculateObstacleForce();
@@ -58,16 +61,17 @@ namespace UnityStandardAssets.Vehicles.Car
             // Combine forces and apply to rigidbody
             Vector3 steeringForce = targetForce * targetWeight + obstacleForce * obstacleWeight;
             steeringForce.y = 0f; // Remove vertical force
-            Vector3 acceleration = steeringForce / rb.mass;
-            rb.AddForce(acceleration);
-            print(acceleration);
+            Vector3 acceleration = (steeringForce / rb.mass);
+            m_force = acceleration.normalized;
+            //rb.AddForce(acceleration);
+            /*print(acceleration);
             print(rb.velocity.magnitude);
             // Limit velocity
             if (rb.velocity.magnitude > maxSpeed)
             {
                 rb.velocity = rb.velocity.normalized * maxSpeed;
                 print(rb.velocity);
-            }
+            }/*
             // Face object in direction of velocity
             /*if (rb.velocity.magnitude > 0.1f)
             {
@@ -112,6 +116,11 @@ namespace UnityStandardAssets.Vehicles.Car
             }
 
             return obstacleForce;
+        }
+        public Vector3 returnForce()
+        {
+            Vector3 zero = new Vector3(m_force.x, m_force.y, m_force.z);
+            return zero;
         }
     }
 }

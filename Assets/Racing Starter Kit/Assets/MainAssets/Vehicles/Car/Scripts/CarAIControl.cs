@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 namespace UnityStandardAssets.Vehicles.Car
 {
     [RequireComponent(typeof (CarController))]
+    [RequireComponent(typeof(CarAIControlPF))]
     public class CarAIControl : MonoBehaviour
     {
         public enum BrakeCondition
@@ -45,13 +46,13 @@ namespace UnityStandardAssets.Vehicles.Car
         private float m_AvoidOtherCarSlowdown;    // how much to slow down due to colliding with another car, whilst avoiding
         private float m_AvoidPathOffset;          // direction (-1 or 1) in which to offset path to avoid other car, whilst avoiding
         private Rigidbody m_Rigidbody;
-
+        private CarAIControlPF m_CarControlPF;
 
         private void Awake()
         {
             // get the car controller reference
             m_CarController = GetComponent<CarController>();
-
+            m_CarControlPF = GetComponent<CarAIControlPF>();
             // give the random perlin a random value
             m_RandomPerlin = Random.value*100;
 
@@ -164,7 +165,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
                 // decide the actual amount of accel/brake input to achieve desired speed.
                 float accel = Mathf.Clamp((desiredSpeed - m_CarController.CurrentSpeed)*accelBrakeSensitivity, -1, 1);
-
+                //accel *= m_CarControlPF.m_force.z + m_CarControlPF.m_force.x;
+                print(m_CarControlPF.m_force.z + m_CarControlPF.m_force.x);
                 // add acceleration 'wander', which also prevents AI from seeming too uniform and robotic in their driving
                 // i.e. increasing the accel wander amount can introduce jostling and bumps between AI cars in a race
                 accel *= (1 - m_AccelWanderAmount) +

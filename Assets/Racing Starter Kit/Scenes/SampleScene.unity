@@ -13174,6 +13174,7 @@ GameObject:
   - component: {fileID: 105824387}
   - component: {fileID: 105824395}
   - component: {fileID: 105824394}
+  - component: {fileID: 105824396}
   m_Layer: 8
   m_Name: AICar6
   m_TagString: Untagged
@@ -13365,6 +13366,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &105824396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105824386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &107886109
 GameObject:
   m_ObjectHideFlags: 0
@@ -17040,6 +17063,7 @@ GameObject:
   - component: {fileID: 212207059}
   - component: {fileID: 212207067}
   - component: {fileID: 212207066}
+  - component: {fileID: 212207068}
   m_Layer: 8
   m_Name: AICar13
   m_TagString: Untagged
@@ -17231,6 +17255,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &212207068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212207058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &230925709
 GameObject:
   m_ObjectHideFlags: 0
@@ -38035,6 +38081,7 @@ GameObject:
   - component: {fileID: 568796602}
   - component: {fileID: 568796610}
   - component: {fileID: 568796609}
+  - component: {fileID: 568796611}
   m_Layer: 8
   m_Name: AICar8
   m_TagString: Untagged
@@ -38226,6 +38273,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &568796611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568796601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &569937681
 GameObject:
   m_ObjectHideFlags: 0
@@ -64907,6 +64976,7 @@ GameObject:
   - component: {fileID: 871780397}
   - component: {fileID: 871780405}
   - component: {fileID: 871780404}
+  - component: {fileID: 871780406}
   m_Layer: 8
   m_Name: AICar11
   m_TagString: Untagged
@@ -65098,6 +65168,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &871780406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871780396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1001 &873746071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72910,6 +73002,7 @@ GameObject:
   - component: {fileID: 996858341}
   - component: {fileID: 996858349}
   - component: {fileID: 996858348}
+  - component: {fileID: 996858350}
   m_Layer: 8
   m_Name: AICar12
   m_TagString: Untagged
@@ -73101,6 +73194,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &996858350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996858340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &1015294209
 GameObject:
   m_ObjectHideFlags: 0
@@ -78715,6 +78830,7 @@ GameObject:
   - component: {fileID: 1222839592}
   - component: {fileID: 1222839600}
   - component: {fileID: 1222839599}
+  - component: {fileID: 1222839601}
   m_Layer: 8
   m_Name: AICar3
   m_TagString: Untagged
@@ -78906,6 +79022,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1222839601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222839591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &1223344051 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: cc02ad7ca6ce5d749911b558119a1706,
@@ -81879,6 +82017,7 @@ GameObject:
   - component: {fileID: 1337116471}
   - component: {fileID: 1337116470}
   - component: {fileID: 2101358249}
+  - component: {fileID: 2101358250}
   m_Layer: 8
   m_Name: AICar1
   m_TagString: Untagged
@@ -83874,6 +84013,7 @@ GameObject:
   - component: {fileID: 1408290447}
   - component: {fileID: 1408290455}
   - component: {fileID: 1408290454}
+  - component: {fileID: 1408290456}
   m_Layer: 8
   m_Name: AICar9
   m_TagString: Untagged
@@ -84065,6 +84205,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1408290456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408290446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &1408301878
 GameObject:
   m_ObjectHideFlags: 0
@@ -85851,6 +86013,7 @@ GameObject:
   - component: {fileID: 1483070706}
   - component: {fileID: 1483070714}
   - component: {fileID: 1483070713}
+  - component: {fileID: 1483070715}
   m_Layer: 8
   m_Name: AICar10
   m_TagString: Untagged
@@ -86042,6 +86205,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1483070715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483070705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &1494322430
 GameObject:
   m_ObjectHideFlags: 0
@@ -103687,6 +103872,7 @@ GameObject:
   - component: {fileID: 1851146781}
   - component: {fileID: 1851146789}
   - component: {fileID: 1851146788}
+  - component: {fileID: 1851146790}
   m_Layer: 8
   m_Name: AICar2
   m_TagString: Untagged
@@ -103878,6 +104064,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1851146790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851146780}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &1852361245
 GameObject:
   m_ObjectHideFlags: 0
@@ -105056,6 +105264,7 @@ GameObject:
   - component: {fileID: 1884201541}
   - component: {fileID: 1884201549}
   - component: {fileID: 1884201548}
+  - component: {fileID: 1884201550}
   m_Layer: 8
   m_Name: AICar5
   m_TagString: Untagged
@@ -105247,6 +105456,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1884201550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1884201540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &1886881786
 GameObject:
   m_ObjectHideFlags: 0
@@ -116839,6 +117070,7 @@ GameObject:
   - component: {fileID: 1974400491}
   - component: {fileID: 1974400499}
   - component: {fileID: 1974400498}
+  - component: {fileID: 1974400500}
   m_Layer: 8
   m_Name: AICar4
   m_TagString: Untagged
@@ -117030,6 +117262,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1974400500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974400490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &1975379286
 GameObject:
   m_ObjectHideFlags: 0
@@ -118021,6 +118275,7 @@ GameObject:
   - component: {fileID: 2003132125}
   - component: {fileID: 2003132133}
   - component: {fileID: 2003132132}
+  - component: {fileID: 2003132134}
   m_Layer: 8
   m_Name: AICar7
   m_TagString: Untagged
@@ -118212,6 +118467,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c02864cfa5fd0a48a8a874c37b7e326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2003132134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003132124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82de9994163a3a745b019d39db1f7b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 100000000
+  maxForce: 1000000
+  maxDistance: 1
+  targetWeight: 1
+  obstacleWeight: 5
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
 --- !u!1 &2005416139
 GameObject:
   m_ObjectHideFlags: 0
@@ -120988,8 +121265,37 @@ MonoBehaviour:
   obstacleWeight: 5
   obstacleLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   m_Target: {fileID: 0}
+  m_force: {x: 0, y: 0, z: 0}
+--- !u!114 &2101358250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337116463}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d963df58504b69045b8d0d746ba6f777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CautiousSpeedFactor: 0.5
+  m_CautiousMaxAngle: 20
+  m_CautiousMaxDistance: 100
+  m_CautiousAngularVelocityFactor: 30
+  m_SteerSensitivity: 0.01
+  m_AccelSensitivity: 1
+  m_BrakeSensitivity: 1
+  m_LateralWanderDistance: 3
+  m_LateralWanderSpeed: 0.2
+  m_AccelWanderAmount: 0.1
+  m_AccelWanderSpeed: 0.1
+  m_BrakeCondition: 2
+  m_Driving: 1
+  m_Target: {fileID: 0}
+  m_StopWhenTargetReached: 0
+  m_ReachTargetThreshold: 2
 --- !u!1 &2102172281
 GameObject:
   m_ObjectHideFlags: 0
