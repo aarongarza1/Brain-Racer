@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 //this script is used when the player completes all the laps of the race (when the race finishes)
 public class RaceFinish : MonoBehaviour
 {
@@ -35,5 +36,6 @@ public class RaceFinish : MonoBehaviour
             AudioListener.volume = 0f;//audio turns off
             Time.timeScale = 0;//time stops
         }
+        SceneManager.LoadScene("TicTacToeScene");
     }
 }

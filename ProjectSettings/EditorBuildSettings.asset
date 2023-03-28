@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Real-time Positioning System/Scenes/SampleScene.unity
+    path: Assets/Racing Starter Kit/Scenes/SampleScene.unity
     guid: adc28652a668a9646b0352d63f41b808
+  - enabled: 1
+    path: Assets/MiniMaxScene/TicTacToeScene.unity
+    guid: f2319c55229582943883372c1174e4ba
   m_configObjects: {}
