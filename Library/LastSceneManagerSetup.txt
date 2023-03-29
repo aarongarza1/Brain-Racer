@@ -1,5 +1,3 @@
-sceneSetups:
-- path: Assets/Chess/Scenes/ChessScene.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
+version https://git-lfs.github.com/spec/v1
+oid sha256:ebf1af5233d04e1eca7c01d0a4547523c55b14323f9977d190509cb253fba7bb
+size 102
