@@ -36,6 +36,6 @@ public class RaceFinish : MonoBehaviour
             AudioListener.volume = 0f;//audio turns off
             Time.timeScale = 0;//time stops
         }
-        SceneManager.LoadScene("TicTacToeScene");
+        SceneManager.LoadScene("ChessScene");
     }
 }

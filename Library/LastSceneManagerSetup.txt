@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/MiniMaxScene/TicTacToeScene.unity
+- path: Assets/Chess/Scenes/ChessScene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
