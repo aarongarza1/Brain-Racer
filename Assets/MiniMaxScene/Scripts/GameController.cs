@@ -19,7 +19,7 @@ public class PlayerColor
 
 public class GameController : MonoBehaviour
 {
-
+    MiniMax miniMaxGamer = new MiniMax();
     public TMPro.TMP_Text[] buttonList;
     private string playerSide;
     public GameObject gameOverPanel;
@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
     public float delay;
     private int cpuChoice;
     public Sprite O;
+    public GridSpace[] gridSpace;
 
     private void Awake(){
         gameOverPanel.SetActive(false);
@@ -214,6 +215,10 @@ public class GameController : MonoBehaviour
         {
             buttonList[i].text = "";
             buttonList[i].spriteAsset= null;
+        }
+        for (int i = 0; i < 15; i++)
+        {
+            gridSpace[i].defaultImage.sprite = null;
         }
         SetPlayerColors(playerX, playerO);
         restartButton.SetActive(false);

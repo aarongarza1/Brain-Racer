@@ -11,6 +11,7 @@ public class GridSpace : MonoBehaviour{
     public Sprite O;
     public TMPro.TMP_Text buttonText;
     private GameController gameController;
+    public Text internalText;
     public void SetSpace()
     {
         if (gameController.playerMove == true)
@@ -33,5 +34,6 @@ public class GridSpace : MonoBehaviour{
     {
         gameController = controller;
     }
+
 
 }
