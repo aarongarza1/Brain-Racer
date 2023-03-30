@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour
             delay += delay * Time.deltaTime;
             if (delay >= 30)
             {
-                cpuChoice = Random.Range(0, 15);
+                cpuChoice = Random.Range(0, 15); //call to minimax rather than random. buttonList keeps track of when the text of a button is set to X or O and is ""empty otherwise for determining score. Player is X, CPU is O
                 if (buttonList[cpuChoice].GetComponentInParent<Button> ().interactable ==true)
                 {
                     buttonList[cpuChoice].text = GetComputerSide();
