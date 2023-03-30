@@ -13,18 +13,21 @@ public class GridSpace : MonoBehaviour{
     private GameController gameController;
     public void SetSpace()
     {
-        string playerChar = gameController.GetPlayerSide();
-        buttonText.text = playerChar;
-        if(playerChar == "X")
+        if (gameController.playerMove == true)
         {
-            defaultImage.sprite = X;
+            string playerChar = gameController.GetPlayerSide();
+            buttonText.text = playerChar;
+            if (playerChar == "X")
+            {
+                defaultImage.sprite = X;
+            }
+            if (playerChar == "O")
+            {
+                defaultImage.sprite = O;
+            }
+            button.interactable = false;
+            gameController.EndTurn();
         }
-        if (playerChar == "O")
-        {
-            defaultImage.sprite = O;
-        }
-        button.interactable= false;
-        gameController.EndTurn();
     }
     public void SetGameControllerReference(GameController controller)
     {

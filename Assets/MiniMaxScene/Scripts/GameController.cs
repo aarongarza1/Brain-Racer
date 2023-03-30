@@ -3,6 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+[System.Serializable]
+public class Player
+{
+    public Image panel;
+    public TMPro.TMP_Text text;
+}
+[System.Serializable]
+public class PlayerColor
+{
+    public Color textColor;
+    public Color panelColor;
+}
+
 public class GameController : MonoBehaviour
 {
 
@@ -13,13 +27,44 @@ public class GameController : MonoBehaviour
     private int moveCount;
     public GameObject restartButton;
 
+    public Player playerX;
+    public Player playerO;
+    public PlayerColor activePlayerColor;
+    public PlayerColor inactivePlayerColor;
+    private string computerSide;
+    public bool playerMove;
+    public float delay;
+    private int cpuChoice;
+    public Sprite O;
+
     private void Awake(){
         gameOverPanel.SetActive(false);
         SetGameControllerReferenceOnButtons();
         playerSide = "X";
-        moveCount= 0;
+        computerSide = "O";
+        moveCount = 0;
         restartButton.SetActive(false);
+        SetPlayerColors(playerX, playerO);
+        playerMove= true;
     }
+
+    private void Update()
+    {
+        if(playerMove == false)
+        {
+            delay += delay * Time.deltaTime;
+            if (delay >= 30)
+            {
+                cpuChoice = Random.Range(0, 15);
+                if (buttonList[cpuChoice].GetComponentInParent<Button> ().interactable ==true)
+                {
+                    buttonList[cpuChoice].text = GetComputerSide();
+                    buttonList[cpuChoice].GetComponentInParent<Button>().interactable = false;
+                    EndTurn();
+                }
+            }
+        }
+    }   
 
     void SetGameControllerReferenceOnButtons(){
         for (int i = 0; i < buttonList.Length; i++)        {
@@ -30,94 +75,128 @@ public class GameController : MonoBehaviour
     public string GetPlayerSide(){
         return playerSide;
     }
-
+    public string GetComputerSide()
+    {
+        return computerSide;
+    }
 
     public void EndTurn()
     {
         moveCount++;
         if (CheckWin())
         {
-            GameOver();
+            GameOver(playerSide);
         }
-        if(moveCount >= 16)
+        else if (moveCount >= 16)
         {
-            SetGameOverText("It's a draw!");
+            GameOver("draw");
         }
-        ChangeSides();
+        else
+        {
+            ChangeSides();
+            delay = 10;
+        }
     }
-    void GameOver()
+
+    void SetPlayerColors(Player newPlayer, Player oldPlayer) {
+        newPlayer.panel.color = activePlayerColor.panelColor;
+        newPlayer.text.color = activePlayerColor.textColor;
+        oldPlayer.panel.color = inactivePlayerColor.panelColor;
+        oldPlayer.text.color = inactivePlayerColor.textColor;
+    }
+    void GameOver(string winningPlayer)
     {
         SetBoardInteractable(false);
 
-
-        if (playerSide == "X")
+        if (winningPlayer == "draw")
         {
-            SetGameOverText("You win!");
+            SetGameOverText("It's a draw!");
         }
-        if (playerSide == "O")
-        {
-            SetGameOverText("You lost :(");
+        else { 
+            if (playerSide == "X")
+            {
+                SetGameOverText("You win!");
+            }
+            if (playerSide == "O")
+            {
+                SetGameOverText("You lost :(");
+            }
         }
 
         restartButton.SetActive(true);
     }
     void ChangeSides()
     {
-        playerSide = (playerSide == "X") ? "O" : "X";
+        playerSide = (playerSide == "X") ? "X" : "O";
+        playerMove = (playerMove == true) ? false : true;
+        if (playerMove== true)
+        {
+            SetPlayerColors(playerX, playerO);
+        }
+        else
+        {
+            SetPlayerColors(playerO, playerX);
+        }
     }
 
     public bool CheckWin() //low amount of win states so it can be brute forced
     {
         //horiz 1
-        if (buttonList[0].text == playerSide && buttonList[1].text == playerSide && buttonList[2].text == playerSide && buttonList[3].text == playerSide){
+        if (buttonList[0].text == playerSide && buttonList[1].text == playerSide && buttonList[2].text == playerSide && buttonList[3].text == playerSide)
+        {
             return true;
         }
         //horiz 2
-        if (buttonList[4].text == playerSide && buttonList[5].text == playerSide && buttonList[6].text == playerSide && buttonList[7].text == playerSide){
+        else if (buttonList[4].text == playerSide && buttonList[5].text == playerSide && buttonList[6].text == playerSide && buttonList[7].text == playerSide)
+        {
             return true;
         }
         //horiz 3
-        if (buttonList[8].text == playerSide && buttonList[9].text == playerSide && buttonList[10].text == playerSide && buttonList[11].text == playerSide)
+        else if (buttonList[8].text == playerSide && buttonList[9].text == playerSide && buttonList[10].text == playerSide && buttonList[11].text == playerSide)
         {
             return true;
         }
         //horiz 4
-        if (buttonList[12].text == playerSide && buttonList[13].text == playerSide && buttonList[14].text == playerSide && buttonList[15].text == playerSide)
+        else if (buttonList[12].text == playerSide && buttonList[13].text == playerSide && buttonList[14].text == playerSide && buttonList[15].text == playerSide)
         {
             return true;
         }
         //vert 1
-        if (buttonList[0].text == playerSide && buttonList[4].text == playerSide && buttonList[8].text == playerSide && buttonList[12].text == playerSide)
+        else if (buttonList[0].text == playerSide && buttonList[4].text == playerSide && buttonList[8].text == playerSide && buttonList[12].text == playerSide)
         {
             return true;
         }
         //vert 2
-        if (buttonList[1].text == playerSide && buttonList[5].text == playerSide && buttonList[9].text == playerSide && buttonList[13].text == playerSide)
+        else if (buttonList[1].text == playerSide && buttonList[5].text == playerSide && buttonList[9].text == playerSide && buttonList[13].text == playerSide)
         {
             return true;
         }
         //vert 3
-        if (buttonList[2].text == playerSide && buttonList[6].text == playerSide && buttonList[10].text == playerSide && buttonList[14].text == playerSide)
+        else if (buttonList[2].text == playerSide && buttonList[6].text == playerSide && buttonList[10].text == playerSide && buttonList[14].text == playerSide)
         {
             return true;
         }
         //vert 4
-        if (buttonList[3].text == playerSide && buttonList[7].text == playerSide && buttonList[11].text == playerSide && buttonList[15].text == playerSide)
+        else if (buttonList[3].text == playerSide && buttonList[7].text == playerSide && buttonList[11].text == playerSide && buttonList[15].text == playerSide)
         {
             return true;
         }
         //diag 1
-        if (buttonList[0].text == playerSide && buttonList[5].text == playerSide && buttonList[10].text == playerSide && buttonList[15].text == playerSide)
+        else if (buttonList[0].text == playerSide && buttonList[5].text == playerSide && buttonList[10].text == playerSide && buttonList[15].text == playerSide)
         {
             return true;
         }
         //diag 2
-        if (buttonList[3].text == playerSide && buttonList[6].text == playerSide && buttonList[9].text == playerSide && buttonList[12].text == playerSide)
+        else if (buttonList[3].text == playerSide && buttonList[6].text == playerSide && buttonList[9].text == playerSide && buttonList[12].text == playerSide)
         {
             return true;
         }
+        else
+        {
 
-        return false;
+            return false;
+
+        }
     }
     void SetGameOverText (string value)
     {
@@ -136,7 +215,7 @@ public class GameController : MonoBehaviour
             buttonList[i].text = "";
             buttonList[i].spriteAsset= null;
         }
-
+        SetPlayerColors(playerX, playerO);
         restartButton.SetActive(false);
     }
     void SetBoardInteractable(bool toggle)
