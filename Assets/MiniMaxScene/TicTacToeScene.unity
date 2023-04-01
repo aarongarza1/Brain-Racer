@@ -3729,6 +3729,7 @@ MonoBehaviour:
   - {fileID: 350110635}
   - {fileID: 911139335}
   - {fileID: 1983255214}
+  winLoss: 0
 --- !u!4 &1699926127
 Transform:
   m_ObjectHideFlags: 0

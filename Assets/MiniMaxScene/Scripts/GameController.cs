@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -37,6 +38,7 @@ public class GameController : MonoBehaviour
     private int cpuChoice;
     public Sprite O;
     public GridSpace[] gridSpace;
+    public int winLoss;
 
     private void Awake(){
         gameOverPanel.SetActive(false);
@@ -46,7 +48,6 @@ public class GameController : MonoBehaviour
         moveCount = 0;
         restartButton.SetActive(false);
         SetPlayerColors(playerX, playerO);
-        playerMove= true;
     }
 
     private void Update()
@@ -112,15 +113,18 @@ public class GameController : MonoBehaviour
         if (winningPlayer == "draw")
         {
             SetGameOverText("It's a draw!");
+            winLoss = 0;
         }
         else { 
             if (playerSide == "X")
             {
                 SetGameOverText("You win!");
+                winLoss = 1;
             }
             if (playerSide == "O")
             {
                 SetGameOverText("You lost :(");
+                winLoss = 0;
             }
         }
 
@@ -222,6 +226,7 @@ public class GameController : MonoBehaviour
         }
         SetPlayerColors(playerX, playerO);
         restartButton.SetActive(false);
+        SceneManager.LoadScene("SampleScene");
     }
     void SetBoardInteractable(bool toggle)
     {
