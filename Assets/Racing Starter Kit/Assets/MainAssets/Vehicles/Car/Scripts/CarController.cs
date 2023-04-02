@@ -47,6 +47,10 @@ namespace UnityStandardAssets.Vehicles.Car
         private Rigidbody m_Rigidbody;
         private const float k_ReversingThreshold = 0.01f;
         public static CarController player;
+        public  GameObject playerCar;
+        public GameObject losingCar;
+        public GameObject winningCar;
+        public static int placement;
 
         public bool Skidding { get; private set; }
         public float BrakeInput { get; private set; }
@@ -59,7 +63,11 @@ namespace UnityStandardAssets.Vehicles.Car
         // Use this for initialization
         private void Start()
         {
+            placement = ScoreVariables.score;
             player = this;
+            playerCar = GameObject.Find("Player");
+            losingCar = GameObject.Find("AICar13");
+            winningCar = GameObject.Find("AICar4");
             m_WheelMeshLocalRotations = new Quaternion[4];
             for (int i = 0; i < 4; i++)
             {
@@ -71,6 +79,21 @@ namespace UnityStandardAssets.Vehicles.Car
 
             m_Rigidbody = GetComponent<Rigidbody>();
             m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl*m_FullTorqueOverAllWheels);
+
+            if (placement == 0)
+            {
+                playerCar.transform.position = new Vector3(24.05f, .117f, 66.34f);
+                losingCar.transform.position = new Vector3(20.93f, -.015f, 74.19f);
+
+            }
+            else if (placement == 1)
+            {
+                playerCar.transform.position = new Vector3(20.9f, .117f, 91.6f);
+                winningCar.transform.position = new Vector3(20.93f, -.015f, 74.19f);
+            }
+            else {
+                playerCar.transform.position = new Vector3(20.93f, -.015f, 74.19f);
+            }
         }
 
 

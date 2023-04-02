@@ -13303,6 +13303,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &105824392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17192,6 +17195,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &212207064
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -38210,6 +38216,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &568796607
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -65105,6 +65114,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &871780402
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -73131,6 +73143,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &996858346
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77689,6 +77704,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.9
   m_BrakeTorque: 20000
+  playerCar: {fileID: 284284816}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &1185554399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -78934,6 +78952,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &1222839595
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -82104,6 +82125,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &1337116468
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84142,6 +84166,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &1408290452
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -86142,6 +86169,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &1483070711
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -103976,6 +104006,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &1851146784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -105393,6 +105426,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &1884201546
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -117198,6 +117234,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &1974400496
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -118403,6 +118442,9 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
+  playerCar: {fileID: 0}
+  losingCar: {fileID: 0}
+  winningCar: {fileID: 0}
 --- !u!54 &2003132130
 Rigidbody:
   m_ObjectHideFlags: 0

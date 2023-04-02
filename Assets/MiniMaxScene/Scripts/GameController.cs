@@ -38,7 +38,6 @@ public class GameController : MonoBehaviour
     private int cpuChoice;
     public Sprite O;
     public GridSpace[] gridSpace;
-    public int winLoss;
 
     private void Awake(){
         gameOverPanel.SetActive(false);
@@ -113,18 +112,18 @@ public class GameController : MonoBehaviour
         if (winningPlayer == "draw")
         {
             SetGameOverText("It's a draw!");
-            winLoss = 0;
+            ScoreVariables.score = 0;
         }
         else { 
             if (playerSide == "X")
             {
                 SetGameOverText("You win!");
-                winLoss = 1;
+                ScoreVariables.score = 1;
             }
             if (playerSide == "O")
             {
                 SetGameOverText("You lost :(");
-                winLoss = 0;
+                ScoreVariables.score = 0;
             }
         }
 

@@ -150,6 +150,7 @@
     <Compile Include="Assets\Racing Starter Kit\Assets\MainAssets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
     <Compile Include="Assets\Racing Starter Kit\Assets\Scripts\LapSelector.cs" />
     <Compile Include="Assets\Racing Starter Kit\Assets\MainAssets\ParticleSystems\Scripts\Hose.cs" />
+    <Compile Include="Assets\ScoreVariables.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Chess\TextMesh Pro\Shaders\TMPro.cginc" />
