@@ -6,7 +6,11 @@ MonoImporter:
   defaultReferences:
   - button: {fileID: 7872378991822645186, guid: 84a33869a652f474e943f10eb4da5a14,
       type: 3}
+  - defaultImage: {instanceID: 0}
+  - X: {fileID: 21300000, guid: e4716df3ef312d7449dabb5d5d7c419f, type: 3}
+  - O: {fileID: 21300000, guid: 12936a0ab350dfd469456cbd40e19ffa, type: 3}
   - buttonText: {instanceID: 0}
+  - internalText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

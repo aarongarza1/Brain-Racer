@@ -315,8 +315,8 @@ MonoBehaviour:
     m_NormalColor: {r: 0, g: 0.8, b: 0.8, a: 1}
     m_HighlightedColor: {r: 0.5019608, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.2, g: 0.4, b: 0.4, a: 1}
-    m_SelectedColor: {r: 0.21568628, g: 0.25882354, b: 0.3019608, a: 1}
-    m_DisabledColor: {r: 0.21568628, g: 0.25882354, b: 0.3019608, a: 1}
+    m_SelectedColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 1}
+    m_DisabledColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -364,4 +364,4 @@ MonoBehaviour:
   X: {fileID: 21300000, guid: e4716df3ef312d7449dabb5d5d7c419f, type: 3}
   O: {fileID: 21300000, guid: 12936a0ab350dfd469456cbd40e19ffa, type: 3}
   buttonText: {fileID: 3097129552681393631}
-  playerSide: X
+  internalText: {fileID: 0}

@@ -17,6 +17,7 @@ public class GridSpace : MonoBehaviour{
         if (gameController.playerMove == true)
         {
             string playerChar = gameController.GetPlayerSide();
+            print(playerChar);
             buttonText.text = playerChar;
             if (playerChar == "X")
             {

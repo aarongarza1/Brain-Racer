@@ -60,6 +60,7 @@ public class GameController : MonoBehaviour
                 if (buttonList[cpuChoice].GetComponentInParent<Button> ().interactable ==true)
                 {
                     buttonList[cpuChoice].text = GetComputerSide();
+                    buttonList[cpuChoice].GetComponentInParent<GridSpace>().defaultImage.sprite = O;
                     buttonList[cpuChoice].GetComponentInParent<Button>().interactable = false;
                     EndTurn();
                 }
