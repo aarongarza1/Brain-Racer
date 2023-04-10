@@ -20,8 +20,9 @@ public class PlayerColor
 
 public class GameController : MonoBehaviour
 {
-    MiniMax miniMaxGamer = new MiniMax();
+    [SerializeField] public TicTacMiniMax miniMaxGamer;
     public TMPro.TMP_Text[] buttonList;
+    public static List<string> boardState = new List<string>();
     private string playerSide;
     public GameObject gameOverPanel;
     public TMPro.TMP_Text gameOverText;
@@ -53,11 +54,21 @@ public class GameController : MonoBehaviour
     {
         if(playerMove == false)
         {
+            
             delay += delay * Time.deltaTime;
             if (delay >= 30)
             {
-                cpuChoice = Random.Range(0, 15); //call to minimax rather than random. buttonList keeps track of when the text of a button is set to X or O and is ""empty otherwise for determining score. Player is X, CPU is O
-                if (buttonList[cpuChoice].GetComponentInParent<Button> ().interactable ==true)
+                for (int i = 0; i < buttonList.Length; i++)
+                {
+                    boardState.Add(buttonList[i].text);
+                }
+                cpuChoice = miniMaxGamer.GetBestMove(boardState); ; //call to minimax rather than random. buttonList keeps track of when the text of a button is set to X or O and is ""empty otherwise for determining score. Player is X, CPU is O
+                print(cpuChoice);
+                if(cpuChoice == -1)
+                {
+                    
+                }
+                else if (buttonList[cpuChoice].GetComponentInParent<Button> ().interactable ==true)
                 {
                     buttonList[cpuChoice].text = GetComputerSide();
                     buttonList[cpuChoice].GetComponentInParent<GridSpace>().defaultImage.sprite = O;
@@ -65,6 +76,7 @@ public class GameController : MonoBehaviour
                     EndTurn();
                 }
             }
+            boardState.Clear();
         }
     }   
 
@@ -85,9 +97,13 @@ public class GameController : MonoBehaviour
     public void EndTurn()
     {
         moveCount++;
-        if (CheckWin())
+        if (CheckWin() == 1)
         {
             GameOver(playerSide);
+        }
+        else if (CheckWin() == 0)
+        {
+            GameOver(computerSide);
         }
         else if (moveCount >= 16)
         {
@@ -116,12 +132,12 @@ public class GameController : MonoBehaviour
             ScoreVariables.score = 0;
         }
         else { 
-            if (playerSide == "X")
+            if (winningPlayer == "X")
             {
                 SetGameOverText("You win!");
                 ScoreVariables.score = 1;
             }
-            if (playerSide == "O")
+            if (winningPlayer == "O")
             {
                 SetGameOverText("You lost :(");
                 ScoreVariables.score = 0;
@@ -144,62 +160,111 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public bool CheckWin() //low amount of win states so it can be brute forced
+    public int CheckWin() //low amount of win states so it can be brute forced
     {
         //horiz 1
         if (buttonList[0].text == playerSide && buttonList[1].text == playerSide && buttonList[2].text == playerSide && buttonList[3].text == playerSide)
         {
-            return true;
+            return 1;
         }
         //horiz 2
         else if (buttonList[4].text == playerSide && buttonList[5].text == playerSide && buttonList[6].text == playerSide && buttonList[7].text == playerSide)
         {
-            return true;
+            return 1;
         }
         //horiz 3
         else if (buttonList[8].text == playerSide && buttonList[9].text == playerSide && buttonList[10].text == playerSide && buttonList[11].text == playerSide)
         {
-            return true;
+            return 1;
         }
         //horiz 4
         else if (buttonList[12].text == playerSide && buttonList[13].text == playerSide && buttonList[14].text == playerSide && buttonList[15].text == playerSide)
         {
-            return true;
+            return 1;
         }
         //vert 1
         else if (buttonList[0].text == playerSide && buttonList[4].text == playerSide && buttonList[8].text == playerSide && buttonList[12].text == playerSide)
         {
-            return true;
+            return 1;
         }
         //vert 2
         else if (buttonList[1].text == playerSide && buttonList[5].text == playerSide && buttonList[9].text == playerSide && buttonList[13].text == playerSide)
         {
-            return true;
+            return 1;
         }
         //vert 3
         else if (buttonList[2].text == playerSide && buttonList[6].text == playerSide && buttonList[10].text == playerSide && buttonList[14].text == playerSide)
         {
-            return true;
+            return 1;
         }
         //vert 4
         else if (buttonList[3].text == playerSide && buttonList[7].text == playerSide && buttonList[11].text == playerSide && buttonList[15].text == playerSide)
         {
-            return true;
+            return 1;
         }
         //diag 1
         else if (buttonList[0].text == playerSide && buttonList[5].text == playerSide && buttonList[10].text == playerSide && buttonList[15].text == playerSide)
         {
-            return true;
+            return 1;
         }
         //diag 2
         else if (buttonList[3].text == playerSide && buttonList[6].text == playerSide && buttonList[9].text == playerSide && buttonList[12].text == playerSide)
         {
-            return true;
+            return 1;
+        }
+        else if (buttonList[0].text == computerSide && buttonList[1].text == computerSide && buttonList[2].text == computerSide && buttonList[3].text == computerSide)
+        {
+            return 0;
+        }
+        //horiz 2
+        else if (buttonList[4].text == computerSide && buttonList[5].text == computerSide && buttonList[6].text == computerSide && buttonList[7].text == computerSide)
+        {
+            return 0;
+        }
+        //horiz 3
+        else if (buttonList[8].text == computerSide && buttonList[9].text == computerSide && buttonList[10].text == computerSide && buttonList[11].text == computerSide)
+        {
+            return 0;
+        }
+        //horiz 4
+        else if (buttonList[12].text == computerSide && buttonList[13].text == computerSide && buttonList[14].text == computerSide && buttonList[15].text == computerSide)
+        {
+            return 0;
+        }
+        //vert 1
+        else if (buttonList[0].text == computerSide && buttonList[4].text == computerSide && buttonList[8].text == computerSide && buttonList[12].text == computerSide)
+        {
+            return 0;
+        }
+        //vert 2
+        else if (buttonList[1].text == computerSide && buttonList[5].text == computerSide && buttonList[9].text == computerSide && buttonList[13].text == computerSide)
+        {
+            return 0;
+        }
+        //vert 3
+        else if (buttonList[2].text == computerSide && buttonList[6].text == computerSide && buttonList[10].text == computerSide && buttonList[14].text == computerSide)
+        {
+            return 0;
+        }
+        //vert 4
+        else if (buttonList[3].text == computerSide && buttonList[7].text == computerSide && buttonList[11].text == computerSide && buttonList[15].text == computerSide)
+        {
+            return 0;
+        }
+        //diag 1
+        else if (buttonList[0].text == computerSide && buttonList[5].text == computerSide && buttonList[10].text == computerSide && buttonList[15].text == computerSide)
+        {
+            return 0;
+        }
+        //diag 2
+        else if (buttonList[3].text == computerSide && buttonList[6].text == computerSide && buttonList[9].text == computerSide && buttonList[12].text == computerSide)
+        {
+            return 0;
         }
         else
         {
 
-            return false;
+            return -1;
 
         }
     }
